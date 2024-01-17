@@ -1,6 +1,6 @@
 resource "aws_db_parameter_group" "main" {
   name   = "${var.env}-mysql-rds"
-  family = "mysql5.7"
+  family = var.parameter_group_family
   tags   = merge(var.tags, { Name = "${var.env}-mysql-rds" })
 }
 
